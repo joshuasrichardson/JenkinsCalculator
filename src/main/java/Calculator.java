@@ -1,3 +1,4 @@
+import static java.lang.System.currentTimeMillis;
 
 class Calculator {
 
@@ -39,7 +40,24 @@ class Calculator {
     etc
      */
     int fibonacciNumberFinder(int n){
-        return 0;
+        if (n == 0) {
+            return 0;
+        }
+        if (n == 2 || n == 1) {
+            return 1;
+        }
+        int[] fibs = {1, 1};
+        for (int i = 1; i < n; ++i) {
+            if (i % 2 == 0) {
+                fibs[0] = fibs[0] + fibs[1];
+            } else {
+                fibs[1] = fibs[0] + fibs[1];
+            }
+        }
+        if (n % 2 == 0) {
+            return fibs[0];
+        }
+        return fibs[1];
     }
 
 
@@ -51,7 +69,17 @@ class Calculator {
     if int a = 16 then this method returns: 10000
      */
     String intToBinaryNumber(int n){
-        return null;
+        int b;
+        StringBuilder binary = new StringBuilder();
+        while (n >= 0) {
+            b = n % 2;
+            n = n / 2;
+            binary.insert(0, b);
+            if (n == 0) {
+                break;
+            }
+        }
+        return binary.toString();
     }
 
     /*
@@ -63,8 +91,12 @@ class Calculator {
     if you run this function twice with the same String input, it must return 2 unique String IDs
      */
     String createUniqueID(String n){
-
-        return null;
+        try {
+            Thread.sleep(1);
+        } catch (InterruptedException e) {
+            e.printStackTrace();
+        }
+        return n + (n.hashCode() + currentTimeMillis());
     }
 
 
