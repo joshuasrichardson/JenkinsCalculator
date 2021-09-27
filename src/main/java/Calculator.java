@@ -2,6 +2,8 @@ import static java.lang.System.currentTimeMillis;
 
 class Calculator {
 
+    俺はこのプロジェクトを滅ぼす！
+
     Calculator(){
 
     }
