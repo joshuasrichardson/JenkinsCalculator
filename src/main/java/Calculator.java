@@ -46,6 +46,7 @@ class Calculator {
         if (n == 2 || n == 1) {
             return 1;
         }
+
         int[] fibs = {1, 1};
         for (int i = 1; i < n; ++i) {
             if (i % 2 == 0) {
